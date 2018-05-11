@@ -1,5 +1,5 @@
 {
-  "name": "webduino-module-sx1278",
+  "name": "sx1278",
   "version": "1.0.0",
   "description": "SX1278 Module for Webduino",
   "main": "LORA.js",
@@ -11,7 +11,8 @@
   "keywords": [
     "arduino",
     "webduino",
-    "lora"
+    "lora",
+    "Sx1278"
   ],
   "dependencies": {
     "webduino-js": "0.x"
