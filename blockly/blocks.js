@@ -5,9 +5,9 @@ var utmUrl = '?utm_source=cloud-blockly&utm_medium=contextMenu&utm_campaign=tuto
 Blockly.Blocks['lora_new'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("LORA , Reset")
+        .appendField("LORA , CS Pin")
         .appendField(new Blockly.FieldDropdown([["0", "0"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["15", "15"]]), "resetPin")
-        .appendField(" Address")
+        .appendField(" Reset")
         .appendField(new Blockly.FieldDropdown([["0", "0"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["15", "15"]]), "address");
     this.setOutput(true, null);
     this.setColour(230);
