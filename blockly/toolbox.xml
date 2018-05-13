@@ -4,7 +4,7 @@
     <value name="VALUE">
       <block type="lora_new">
         <field name="ssPin">10</field>
-        <field name="Reset">9</field>
+        <field name="resetPin">9</field>
       </block>
     </value>
   </block>
