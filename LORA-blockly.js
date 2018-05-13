@@ -2,8 +2,8 @@
 
   'use strict';
 
-  window.getLORA = function (board, rstPin, address) {
-    return new webduino.module.LORA(board, rstPin, address);
+  window.getLORA = function (board, rstPin, ssPin) {
+    return new webduino.module.LORA(board, rstPin, ssPin);
   };
 
 }(window, window.webduino));
