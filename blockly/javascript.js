@@ -1,7 +1,7 @@
 Blockly.JavaScript['lora_new'] = function (block) {
   var dropdown_resetpin = block.getFieldValue('resetPin');
-  var dropdown_address = block.getFieldValue('address');
-  var code = 'getLORA(board,' + dropdown_resetpin + ',' + dropdown_address + ')';
+  var dropdown_ssPin = block.getFieldValue('ssPin');
+  var code = 'getLORA(board,' + dropdown_resetpin + ',' + dropdown_ssPin + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
