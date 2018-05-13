@@ -16,17 +16,17 @@
   var Module = scope.Module;
   var _backlight;
 
-  function LORA(board, rstPin, address) {
+  function LORA(board, rstPin, ssPin) {
     Module.call(this);
     this._board = board;
     self = this;
     self._rstPin = rstPin;
-    self._address = address;
+    self._ssPin = ssPin; 
     self._callbackAckOK = function () {}
     self._callbackAckErr = function () {}
     self._callbackRecvAckOK = function () {}
     self.recvData = '';
-    var cmd = [0xF0, 0x04, 0x22, 0x0 /*init*/ , rstPin, address, 0xF7];
+    var cmd = [0xF0, 0x04, 0x22, 0x0 /*init*/ , rstPin, ssPin, 0xF7];
     board.send(cmd);
     board.on(webduino.BoardEvent.SYSEX_MESSAGE,
       function (event) {
@@ -60,7 +60,7 @@
   });
 
   proto.send = function (strData) {
-    var cmd = [0xF0, 0x04, 0x22, 0x01, this._address /*Address*/ ];
+    var cmd = [0xF0, 0x04, 0x22, 0x01, this._ssPin /*Address*/ ];
     cmd = cmd.concat(toASCII(strData));
     cmd.push(0xF7);
     this._board.send(cmd);
@@ -74,7 +74,7 @@
       self._callbackAckOK = ackOK;
       self._callbackAckErr = ackErr;
     }
-    var cmd = [0xF0, 0x04, 0x22, 0x02, this._address /*Address*/ ];
+    var cmd = [0xF0, 0x04, 0x22, 0x02, this._ssPin /*Address*/ ];
     cmd = cmd.concat(toASCII(strData));
     cmd.push(0xF7);
     this._board.send(cmd);
@@ -84,7 +84,7 @@
     if (arguments.length == 1) {
       self._callbackRecvAckOK = ackOK;
     }
-    var cmd = [0xF0, 0x04, 0x22, 0x04, this._address /*Address*/ , 0xF7];
+    var cmd = [0xF0, 0x04, 0x22, 0x04, this._ssPin /*Address*/ , 0xF7];
     this._board.send(cmd);
   }
 
