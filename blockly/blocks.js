@@ -6,9 +6,9 @@ Blockly.Blocks['lora_new'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("LORA , SS Pin")
-        .appendField(new Blockly.FieldDropdown([["0", "0"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["15", "15"]]), "resetPin")
+        .appendField(new Blockly.FieldDropdown([["0", "0"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["15", "15"]]), "ssPin")
         .appendField(" Reset")
-        .appendField(new Blockly.FieldDropdown([["0", "0"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["15", "15"]]), "address");
+        .appendField(new Blockly.FieldDropdown([["0", "0"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["15", "15"]]), "resetPin");
     this.setOutput(true, null);
     this.setColour(230);
     this.setTooltip('');
