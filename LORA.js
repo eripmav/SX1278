@@ -33,8 +33,10 @@
       function (event) {
         var m = event.message;
         //send Ack response
-        if (m.length == 4 && m[1] == 2) {
-          var state = m[2] - 48; //ascii to int
+        console.log(m.length);
+        if (m.length == 4 && m[2] == 2) {
+          var state = m[3] - 48; //ascii to int
+          console.log(state);
           if (state == 0) {
             self._callbackAckOK();
           } else {
@@ -42,9 +44,9 @@
           }
         }
         //recv Ack response
-        if (m[1] == 4) {
+        if (m[2] == 4) {
           var data = '';
-          for (var i = 2; i < m.length; i++) {
+          for (var i = 3; i < m.length; i++) {
             data += String.fromCharCode(m[i]);
           }
           self.recvData = data;
