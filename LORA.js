@@ -26,11 +26,13 @@
     self._callbackAckErr = function () {}
     self._callbackRecvAckOK = function () {}
     self.recvData = '';
+    console.log("LORA Init");
     var cmd = [0xF0, 0x04, 0x22, 0x0 /*init*/ , rstPin, address, 0xF7];
     board.send(cmd);
     board.on(webduino.BoardEvent.SYSEX_MESSAGE,
       function (event) {
         var m = event.message;
+        console.log(m);
         //send Ack response
         if (m.length == 4 && m[2] == 2) {
           var state = m[3] - 48; //ascii to int
