@@ -3,8 +3,8 @@
     <field name="VAR">lora</field>
     <value name="VALUE">
       <block type="lora_new">
-        <field name="ssPin">10</field>
-        <field name="resetPin">9</field>
+        <field name="resetPin">10</field>
+        <field name="address">9</field>
       </block>
     </value>
   </block>

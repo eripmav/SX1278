@@ -1,7 +1,7 @@
 {
-  "name": "sx1278",
+  "name": "webduino-module-lora",
   "version": "1.0.0",
-  "description": "SX1278 Module for Webduino",
+  "description": "Lora Module for Webduino",
   "main": "LORA.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,8 +11,7 @@
   "keywords": [
     "arduino",
     "webduino",
-    "lora",
-    "Sx1278"
+    "lora"
   ],
   "dependencies": {
     "webduino-js": "0.x"
