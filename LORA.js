@@ -32,7 +32,7 @@
     board.on(webduino.BoardEvent.SYSEX_MESSAGE,
       function (event) {
         var m = event.message;
-        console.log(m);
+        console.log(m[2],m[1]);
         //send Ack response
         if (m.length == 4 && m[2] == 2) {
           var state = m[3] - 48; //ascii to int
