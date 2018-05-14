@@ -37,8 +37,10 @@
         if (m.length == 4 && m[2] == 2) {
           var state = m[3] - 48; //ascii to int
           if (state == 0) {
+            console.log(m[3]);
             self._callbackAckOK();
           } else {
+            console.log(m[3]);
             self._callbackAckErr();
           }
         }
