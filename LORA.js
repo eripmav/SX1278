@@ -32,22 +32,19 @@
     board.on(webduino.BoardEvent.SYSEX_MESSAGE,
       function (event) {
         var m = event.message;
-        console.log(m[2],m[1]);
         //send Ack response
-        if (m.length == 4 && m[2] == 2) {
-          var state = m[3] - 48; //ascii to int
+        if (m.length == 4 && m[1] == 2) {
+          var state = m[2] - 48; //ascii to int
           if (state == 0) {
-            console.log(m[3]);
             self._callbackAckOK();
           } else {
-            console.log(m[3]);
             self._callbackAckErr();
           }
         }
         //recv Ack response
-        if (m[2] == 4) {
+        if (m[1] == 4) {
           var data = '';
-          for (var i = 3; i < m.length; i++) {
+          for (var i = 2; i < m.length; i++) {
             data += String.fromCharCode(m[i]);
           }
           self.recvData = data;
