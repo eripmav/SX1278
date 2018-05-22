@@ -5,7 +5,7 @@ Webduino Module for LoRa.
 ## Installation
 
 ```
-bower install https://github.com/webduinoio/webduino-module-lora.git
+bower install **https://github.com/webduinoio/webduino-module-lora.git**
 ```
 
 ## License
